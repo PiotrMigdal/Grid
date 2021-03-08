@@ -1,0 +1,119 @@
+
+
+* {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.c1 {
+    background: yellow;
+}
+.c2 {
+    background: rgb(255, 166, 0);
+}
+.c3 {
+    background: rgb(255, 0, 0);
+}
+.c4 {
+    background: rgb(255, 0, 212);
+}
+.c5 {
+    background: rgb(162, 0, 255);
+}
+.c6 {
+    background: rgb(0, 4, 255);
+}
+.c7 {
+    background: rgb(0, 183, 255);
+}
+.c8 {
+    background: rgb(0, 255, 64);
+}
+.c9 {
+    background: rgb(123, 255, 0);
+}
+
+.container-num {
+    display: grid;
+    /* Create table 3x3 with last column responsive*/
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 200px 200px auto;
+    /* use fr for always responsive. The first and last are equal but the second is twice*/
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* repeat - define number and columns and their fractions */
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 1fr);
+    /* Shorthand of the above */
+    grid-template: repeat(3, 100px) / repeat(3, 1fr);
+
+    grid-gap: 5px;
+}
+
+
+.container-web {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-rows: 40px 200px 40px;
+    grid-template-columns: repeat(12, 1fr); /*this is flexible to add 12 so you can customize divs width*/
+}
+.container-web .header {
+    background: rgb(253, 253, 120);
+
+    /* Width: start where first column starts end with 3rd column starts */
+    grid-column: 1 / 3;
+    /*Alternatives:*/
+    grid-column: 1 / span 2; /*start on 1st and span accross the next 2*/
+    grid-column: 1 / -1; /*Start on first and end on very last*/
+
+    /*However, we want menu to start at top, so we move header to the right*/
+    grid-column: 2 / -1;
+
+}
+.container-web .menu {
+    background: rgb(253, 120, 120);
+    grid-row: 1 / 3;
+}
+.container-web .content {
+    background: rgb(120, 133, 253);
+    grid-column: 2 / -1;
+}
+.container-web .footer {
+    background: rgb(124, 253, 120);
+    grid-column: 1 / -1;
+}
+
+.test-area {
+    height: 500px;
+}
+.container-area {
+    height: 100%; /*it makes responsive height*/
+    display: grid;
+    grid-gap: 3px;
+    grid-template-rows: 40px auto 40px;
+    grid-template-columns: repeat(12, 1fr);
+    /*you define layout here dot is empty space*/
+    grid-template-areas:
+    "m h h h h h h h h h h ."
+    "m c c c c c c c c c c c"
+    "f f f f f f f f f f f f";
+}
+.container-area .header {
+    background: rgb(253, 253, 120);
+    grid-area: h;
+}
+.container-area .menu {
+    background: rgb(253, 120, 120);
+    grid-area: m;
+}
+.container-area .content {
+    background: rgb(120, 133, 253);
+    grid-area: c;
+}
+.container-area .footer {
+    background: rgb(124, 253, 120);
+    grid-area: f;
+}
