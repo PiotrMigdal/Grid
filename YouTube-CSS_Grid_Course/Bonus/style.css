@@ -1,0 +1,24 @@
+
+
+* {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(61, 61, 61);
+}
+
+.container-web {
+}
+.container-web .header {
+    background: rgb(253, 253, 120);
+}
+.container-web .menu {
+    background: rgb(253, 120, 120);
+}
+.container-web .content {
+    background: rgb(120, 133, 253);
+}
+.container-web .footer {
+    background: rgb(124, 253, 120);
+}
